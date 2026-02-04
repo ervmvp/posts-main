@@ -11,16 +11,7 @@
             }
         $categories = $db->query($category_name, $params)->fetchAll(PDO::FETCH_ASSOC);
 
-    echo "<h1> Emuārs </h1>";
-        echo "<form>";
-            echo "<input name='search_query' />";
-            echo "<button> Meklēt </button>";
-        echo "</form>";
-    echo "<ul>";
-        foreach($categories as $category) {
-            echo "<li>" . $category["category_name"] . "</li>";
-        }
-    echo "</ul>";
+    require "./views/categories.view.php";
 
 
 
