@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="lv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emuārs</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <div class="container">
-        <h1> Categories </h1>
-        <div class="searchBox">
-            <form>
-                <input name='search_query' />
-                <button> Meklēt </button>
-            </form>
-            <?php if (count($posts) == 0) { ?>
-                <p>❌spēks pateikt nē..</p>
-            <?php } else { ?>
-                <ul>
-                    <?php foreach($categories as $category) { ?>
-                        <li> <?php echo $category["category_name"] ?> </li>
-                    <?php } ?>
-                </ul>
-            <?php } ?>
-        </div>
+<?php require "components/navbar.php"; ?>
+<?php ob_start(); ?>
+<div class="container">
+    <h1> Categories </h1>
+    <div class="searchBox">
+        <form>
+            <input name='search_query' class="searchBar" value='<?= $_GET["search_query"] ?? "" ?>' />
+            <button class="searchBar"> Meklēt </button>
+        </form>
+        <?php if (count($categories) == 0) { ?>
+            <p>❌spēks pateikt nē..</p>
+        <?php } else { ?>
+            <ul>
+                <?php foreach($categories as $category) { ?>
+                    <li> <?php echo $category["category_name"] ?> </li>
+                <?php } ?>
+            </ul>
+        <?php } ?>
     </div>
-</body>
-</html>
+</div>
+<?php $out1 = ob_get_contents(); ?>
+<?php ob_end_clean(); ?>
+<?php require "components/layout.php"; ?>

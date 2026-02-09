@@ -1,5 +1,6 @@
 <?php
+    $title = "Blogu revolūcija";
 
-$title = "Blogu revolūcija";
-
-require "views/story.view.php";
+    $pageTitle = "Emuārs - par mums";
+    $customStyles = "story.css";
+    require "views/story.view.php";
