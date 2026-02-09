@@ -11,6 +11,8 @@
             }
         $categories = $db->query($category_name, $params)->fetchAll(PDO::FETCH_ASSOC);
 
+    $pageTitle = "Emuārs - kategorijas";
+    $customStyles = "categories.css";
     require "./views/categories.view.php";
 
 

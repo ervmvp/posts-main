@@ -11,6 +11,7 @@
             }
         $posts = $db->query($sql_query, $params)->fetchAll(PDO::FETCH_ASSOC);
 
+    $customStyles = "index.css";
     require "./views/index.view.php";
 
 
