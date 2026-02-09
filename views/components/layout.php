@@ -10,3 +10,7 @@
         <link rel="stylesheet" href="/css/<?= $customStyles ?>">
     <?php } ?>
 </head>
+<body>
+    <?= $out1 ?>
+</body>
+</html>

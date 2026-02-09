@@ -1,5 +1,5 @@
-<?php require "components/header.php"; ?>
 <?php require "components/navbar.php"; ?>
+<?php ob_start(); ?>
 <div class="container">
     <h1> Emuārs </h1>
         <form >
@@ -16,4 +16,6 @@
             </ul>
         <?php } ?>
 </div>
-<?php require "components/footer.php"; ?>
+<?php $out1 = ob_get_contents(); ?>
+<?php ob_end_clean(); ?>
+<?php require "components/layout.php"; ?>
