@@ -1,4 +1,4 @@
-<?php require "components/navbar.php"; ?>
+<?php require "views/components/navbar.php"; ?>
 <?php ob_start(); ?>
 <div class="container">
     <h1> Emuārs </h1>
@@ -11,11 +11,11 @@
         <?php } else { ?>
             <ul>
                 <?php foreach($posts as $post) { ?>
-                    <li> <?php echo $post["content"] ?> </li>
+                    <li> <a href="show?id=<?= $post["id"] ?>"> <?= htmlspecialchars($post["content"]) ?></a> </li>
                 <?php } ?>
             </ul>
         <?php } ?>
 </div>
 <?php $out1 = ob_get_contents(); ?>
 <?php ob_end_clean(); ?>
-<?php require "components/layout.php"; ?>
+<?php require "views/components/layout.php"; ?>
